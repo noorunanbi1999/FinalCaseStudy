@@ -88,7 +88,7 @@ const UpdateProductForm = () => {
   },[customersProduct.product])
 
   return (
-    <Fragment className="createProductContainer ">
+    <Fragment>
       <Typography
         variant="h3"
         sx={{ textAlign: "center" }}
@@ -190,7 +190,6 @@ const UpdateProductForm = () => {
               >
                 <MenuItem value="Men">Men</MenuItem>
                 <MenuItem value="Women">Women</MenuItem>
-                <MenuItem value="Kids">Kids</MenuItem>
               </Select>
             </FormControl>
           </Grid>
@@ -221,7 +220,6 @@ const UpdateProductForm = () => {
                 <MenuItem value="Tops">Tops</MenuItem>
                 <MenuItem value="Dresses">Dresses</MenuItem>
                 <MenuItem value="T-Shirts">T-Shirts</MenuItem>
-                <MenuItem value="Saree">Saree</MenuItem>
                 <MenuItem value="Saree">Saree</MenuItem>
                 <MenuItem value="Lengha Choli">Lengha Choli</MenuItem>
               </Select>

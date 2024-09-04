@@ -29,6 +29,7 @@ export default function Navigation() {
   const { auth,cart } = useSelector((store) => store);
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [searchString, setSearchString] = useState("")
   const openUserMenu = Boolean(anchorEl);
   const jwt = localStorage.getItem("jwt");
   const location=useLocation();
@@ -76,6 +77,10 @@ export default function Navigation() {
   const handleMyOrderClick=()=>{
     handleCloseUserMenu()
     navigate("/account/order")
+  }
+
+  const handleSearch = () =>{
+    navigate(`/search?query=${encodeURIComponent(searchString)}`)
   }
 
   return (
@@ -403,9 +408,9 @@ export default function Navigation() {
               </Popover.Group>
 {/* Search */}
 <div className="flex lg:ml-6 items-center">
-                 <input type="text" placeholder=" Search for Product" id="search" class="border border-gray-300 rounded-lg p-1.5">
+                 <input type="text" placeholder=" Search for Product" id="search" class="border border-gray-300 rounded-lg p-1.5" onChange={(e) => setSearchString(e.target.value)} value={searchString} >
                  </input>
-                 <button type="submit" className="bg-yellow-500 text-white rounded hover:bg-yellow-600 "> 
+                 <button type="submit" className="bg-yellow-500 text-white rounded hover:bg-yellow-600 " onClick={handleSearch}> 
                 <div>
                   <p className="p-2 text-white-400">
                     <span className="sr-only">Search</span>
